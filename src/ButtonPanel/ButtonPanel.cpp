@@ -142,8 +142,8 @@ void ButtonPanel::draw(){
 		// ofRect(5, 5, w, buttonheight);
         
         // BACKGROUND
-		ofSetHexColor(0x000000);
-		if(over){
+        ofFill();
+        if(over){
 			ofSetHexColor(0xffffff);
 		}else{
 			ofSetHexColor(0xfafafa);
