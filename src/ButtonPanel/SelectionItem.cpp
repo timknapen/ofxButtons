@@ -60,7 +60,7 @@ void SelectionItem::draw(){
 	ofFill();
 	if (*state == stateValue) {
 		if(over){
-			ofSetHexColor(marked);
+			ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
 		}else{
 			ofSetHexColor(0x999999);
 		}

@@ -45,7 +45,7 @@ void SlideButton::draw(){
 		ofSetHexColor(0xeeeeee);
 		ofRect(2, h+2,w-5, h-4);
 		if(over){
-			ofSetHexColor(marked);
+			ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
 			ofRect(2, h+2,(int)((w-5)*(*value-bottom)/(top-bottom)), h-4);
 			ofSetHexColor(0x666666);
 		}else {		

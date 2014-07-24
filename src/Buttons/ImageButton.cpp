@@ -50,7 +50,7 @@ void ImageButton::draw(){
 		ofPushMatrix();
 		ofTranslate(xpos,ypos, 0);
 		if(over){
-			ofSetHexColor(marked);
+			ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
 			ofRect(0, 0, w, h);
 		}	
 		if(counter < steps) {

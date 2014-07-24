@@ -38,11 +38,6 @@ ButtonManager::~ButtonManager(){
 
 
 
-
-
-
-
-
 //--------------------------------------------------------------
 void ButtonManager::printValues(){
 	cout << "== BUTTON SETTINGS ======" <<endl<<endl;
@@ -63,8 +58,10 @@ void ButtonManager::printValues(){
 //--------------------------------------------------------------
 void ButtonManager::draw(){
 	if(visible){
+
 		ofPushStyle();
-		ofDisableSmoothing();
+        ofDisableSmoothing();
+
         ofSetLineWidth(1);
 		glLineWidth(1);
 		drawToolBar();
@@ -102,7 +99,7 @@ void ButtonManager::drawToolBar(){
             
 			ofFill();
 			if (buttonorder[i]->visible) {
-				ofSetHexColor(marked);
+				ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
 				ofRect(xpos+2, 2, toolbarw-4, 16 );
 				ofSetHexColor(0x666666);
 			}else{

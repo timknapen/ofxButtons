@@ -67,13 +67,13 @@ void FlashButton::draw(){
 			ofSetColor(255, 255* counter / steps, 255 * counter / steps);
 		}else if (*on) {
 			if(over){
-				ofSetHexColor(marked);
+				ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
 			}else{
-				ofSetHexColor(0x999999);
+				ofSetHexColor(BUTTONS_COLOR_MEDIUM);
 				
 			}
 		}else {
-			ofSetHexColor(0xcccccc);
+			ofSetHexColor(BUTTONS_COLOR_LIGHT);
 		}
 		ofRect(2, 4, w-9, h-8);
 		

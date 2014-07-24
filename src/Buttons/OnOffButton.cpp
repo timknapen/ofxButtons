@@ -41,16 +41,16 @@ void OnOffButton::draw(){
 		
 		if (*on) {
 			if(over){
-				ofSetHexColor(marked);
+				ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
 			}else{
-				ofSetHexColor(0x999999);
+				ofSetHexColor(BUTTONS_COLOR_MEDIUM);
 				
 			}
 			ofRect(0, 0, w-5, h-2);
 			ofSetHexColor(0xffffff);
 			ofDrawBitmapString("ON", 4, h-6);
 		}else {
-			ofSetHexColor(0xcccccc);
+			ofSetHexColor(BUTTONS_COLOR_LIGHT);
 			ofRect(0, 0, w-5, h-2);
 			ofSetHexColor(0x999999);
 			ofDrawBitmapString("OFF", 4, h-6);

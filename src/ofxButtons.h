@@ -4,8 +4,10 @@
 
 // making all the buttons include ! yay
 
-#define marked		0xaaff66		// bright green
-
+#define BUTTONS_COLOR_HIGHLIGHT		0x99ff99		// bright green
+#define BUTTONS_COLOR_DARK          0x999999
+#define BUTTONS_COLOR_MEDIUM        0x77dd77        //0x66cc66
+#define BUTTONS_COLOR_LIGHT         0xffffff
 
 #include "ofMain.h"
 #include "SimpleButton.h"

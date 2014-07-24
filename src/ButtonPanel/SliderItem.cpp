@@ -84,18 +84,16 @@ void SliderItem::draw(){
 	ofSetHexColor(0xeeeeee);
 	ofRect(0, 2,(w -5), h-2);
 	if(over){
-		ofSetHexColor(marked);
+		ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
 		ofRect(0, 2, (int)((w -5)*(*value-bottom)/(top-bottom)), h-2);
-		ofSetHexColor(0x666666);
-	}else {		
-		ofSetHexColor(0xcccccc);
+	}else {
+		ofSetHexColor(BUTTONS_COLOR_MEDIUM);
 		ofRect(0, 2,(int)((w -5)*(*value-bottom)/(top-bottom)), h-2);
-		ofSetHexColor(0x999999);
-	}	
+	}
 	if(over){
-		ofSetHexColor(0x666666);
+		ofSetHexColor(0x333333);
 	}else{
-		ofSetHexColor(0x999999);
+		ofSetHexColor(0x666666);
 	}
 	ofDrawBitmapString(title+" "+ofToString(*value, 2), 2, h-2);
 	ofPopMatrix();

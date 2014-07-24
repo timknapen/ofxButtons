@@ -51,9 +51,9 @@ void ListItem::draw(){
 	// ofSetColor(240, 255, 240);
 	// ofRect(0,0, w, h);
 	if(over){
-		ofSetHexColor(0x666666);
+		ofSetHexColor(0x333333);
 	}else{
-		ofSetHexColor(0x999999);
+		ofSetHexColor(0x666666);
 	}
 	ofDrawBitmapString(title, 2, h-2);
 	ofPopMatrix();

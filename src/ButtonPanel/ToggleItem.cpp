@@ -12,7 +12,8 @@
 //--------------------------------------------------------------
 ToggleItem::ToggleItem(string theTitle, bool& theValue):ListItem(theTitle){
 	// do nothing?
-	w = 34 + 4+ title.length()*CHAR_W; //textw
+	w = 30 + 4+ title.length()*CHAR_W; //textw
+	w = (w <200)?200:w;
 	on = &theValue;
 } 
 
@@ -50,29 +51,28 @@ bool ToggleItem::checkClick(int x, int y){
 //--------------------------------------------------------------
 void ToggleItem::draw(){
 	ofPushMatrix();
-	ofTranslate(32, 0, 0);
-	ListItem::draw();
-	ofPopMatrix();
-	
-	ofPushMatrix();
 	ofTranslate(0, ypos,0);
-	ofFill();
-	if (*on) {
+	if(*on) {
+        ofFill();
 		if(over){
-			ofSetHexColor(marked);
+			ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
 		}else{
-			ofSetHexColor(0x999999);
-			
+            ofSetHexColor(BUTTONS_COLOR_MEDIUM);
 		}
-		ofRect(0, 2, 30, h-4);
-		ofSetHexColor(0xffffff);
-		ofDrawBitmapString("ON", 4, h-4);
+        ofRect(0, 2,(w - 5), h-2);
 	}else {
+        ofNoFill();
 		ofSetHexColor(0xcccccc);
-		ofRect(0, 2, 30, h-4);
-		ofSetHexColor(0x999999);
-		ofDrawBitmapString("OFF", 4, h-4);
+        ofRect(0, 2,(w - 5), h-2);
 	}
+
+    if(over){
+        ofSetHexColor(0x333333);
+    }else{
+        ofSetHexColor(0x666666);
+    }
+    ofDrawBitmapString(title , (w-5)/2 - (title.length()*CHAR_W)/2, h-4); // title + " " + (*on ? "ON" : "OFF" )
+
 	ofPopMatrix();
 	
 	//
