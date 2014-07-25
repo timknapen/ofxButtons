@@ -7,7 +7,7 @@
 #define BUTTONS_COLOR_HIGHLIGHT		0x99ff99		// bright green
 #define BUTTONS_COLOR_DARK          0x999999
 #define BUTTONS_COLOR_MEDIUM        0x77dd77        //0x66cc66
-#define BUTTONS_COLOR_LIGHT         0xffffff
+#define BUTTONS_COLOR_LIGHT         0xdddddd
 
 #include "ofMain.h"
 #include "SimpleButton.h"

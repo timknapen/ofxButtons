@@ -52,8 +52,9 @@ bool ToggleItem::checkClick(int x, int y){
 void ToggleItem::draw(){
 	ofPushMatrix();
 	ofTranslate(0, ypos,0);
+    ofFill();
+
 	if(*on) {
-        ofFill();
 		if(over){
 			ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
 		}else{
@@ -61,8 +62,8 @@ void ToggleItem::draw(){
 		}
         ofRect(0, 2,(w - 5), h-2);
 	}else {
-        ofNoFill();
-		ofSetHexColor(0xcccccc);
+        //ofNoFill();
+		ofSetHexColor(BUTTONS_COLOR_LIGHT);
         ofRect(0, 2,(w - 5), h-2);
 	}
 

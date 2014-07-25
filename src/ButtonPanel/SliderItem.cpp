@@ -81,7 +81,7 @@ void SliderItem::draw(){
 	ofPushMatrix();
 	ofTranslate(0, ypos,0);
 	ofFill();
-	ofSetHexColor(0xeeeeee);
+	ofSetHexColor(BUTTONS_COLOR_LIGHT);
 	ofRect(0, 2,(w -5), h-2);
 	if(over){
 		ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
