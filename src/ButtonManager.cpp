@@ -15,6 +15,8 @@ ButtonManager::ButtonManager(){
 	toolbarh = 20;
 	bIsDragging = false;
     bReadKeys = true;
+	lastPanel = NULL;
+
 }
 
 
@@ -307,13 +309,56 @@ ImageButton * ButtonManager::addImageButton(string imgfile, bool& pValue ){
 	return b;
 }
 
+#pragma mark -
+#pragma mark PANELS
+
 //--------------------------------------------------------------
 ButtonPanel * ButtonManager::addButtonPanel(string title){
 	ButtonPanel * b = new ButtonPanel(title, 0, 0 );
+	lastPanel = b;
 	addButton(b);
 	return b;
 }
 
+//--------------------------------------------------------------
+void ButtonManager::addListItem(string title){
+	if(lastPanel == NULL){
+		addButtonPanel("Settings");
+	}
+	lastPanel->addListItem(title);
+}
+
+//--------------------------------------------------------------
+void ButtonManager::addToggleItem(string title, bool& value){
+	if(lastPanel == NULL){
+		addButtonPanel("Settings");
+	}
+	lastPanel->addToggleItem(title, value);
+}
+
+//--------------------------------------------------------------
+void ButtonManager::addSliderItem(string title, float bottom, float top, float& value){
+	if(lastPanel == NULL){
+		addButtonPanel("Settings");
+	}
+	lastPanel->addSliderItem(title, bottom, top, value);
+}
+
+//--------------------------------------------------------------
+void ButtonManager::addFlashItem(string name, bool& value){
+	if(lastPanel == NULL){
+		addButtonPanel("Settings");
+	}
+	lastPanel->addFlashItem(name, value);
+}
+
+//--------------------------------------------------------------
+void ButtonManager::addSelectionItem(string name, int& state, const int stateValue){
+	if(lastPanel == NULL){
+		addButtonPanel("Settings");
+	}
+	lastPanel->addSelectionItem(name, state, stateValue);
+}
 
 
 

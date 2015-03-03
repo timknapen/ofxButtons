@@ -26,6 +26,16 @@ public:
 	void saveToXML(string URL);
 	void setButtonPanel(string name);
 	
+	// PANELS
+	ButtonPanel * lastPanel;
+	ButtonPanel * addButtonPanel(string title);
+	void addListItem(string title);
+	void addToggleItem(string title, bool& value); //onoff
+	void addSliderItem(string title, float bottom, float top, float& value); // slider
+	void addFlashItem(string name, bool& value); // flash button
+	void addSelectionItem(string name, int& state, const int stateValue); // multi selection item
+
+	
 	//	
 	SlideButton * addSlideButton(string title, float fbottom, float ftop, float& pValue);
 	SlideButton * addSlideButton(string title, float& pValue);
@@ -35,8 +45,7 @@ public:
 	FlashButton * addFlashButton(string title, bool& pValue);
 	ImageButton * addImageButton(string imgfile, bool& pValue);
 	//
-	ButtonPanel * addButtonPanel(string title);
-	//
+
 	//
 	void addButton(SimpleButton * aButton);
 	void addButton(string title);
