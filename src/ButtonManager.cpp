@@ -16,7 +16,6 @@ ButtonManager::ButtonManager(){
 	bIsDragging = false;
     bReadKeys = true;
 	lastPanel = NULL;
-
 }
 
 
@@ -60,10 +59,10 @@ void ButtonManager::printValues(){
 //--------------------------------------------------------------
 void ButtonManager::draw(){
 	if(visible){
-
+		glDepthMask(false);
 		ofPushStyle();
-        ofDisableSmoothing();
-
+		ofDisableSmoothing();
+		ofDisableDepthTest();
         ofSetLineWidth(1);
 		glLineWidth(1);
 		drawToolBar();
@@ -73,6 +72,7 @@ void ButtonManager::draw(){
 		}
 		ofDisableAlphaBlending();
 		ofPopStyle();
+		glDepthMask(true);
 	}
 }
 
@@ -86,7 +86,7 @@ void ButtonManager::drawToolBar(){
 		int margin = 5;
 		int maxchars = (int)(toolbarw/ CHAR_W)-1;
 		ofFill();
-		ofSetHexColor(0xfafafa);
+		ofSetColor(255, 255, 255, 240);
 		ofRect(0, 0, ofGetWidth(), toolbarh); // bg
 		//
 		ofSetHexColor(0xcccccc);// bg border
@@ -258,59 +258,7 @@ void ButtonManager::addButton(string title ){
 	addButton(new SimpleButton(title, 0, 0));
 }
 
-/********************* OTHER BUTTONS ********************/
-
-//--------------------------------------------------------------
-SlideButton * ButtonManager::addSlideButton(string title, float& pValue ){
-	SlideButton * b = new SlideButton(title, 0, 0, pValue );
-	addButton(b);
-	return b;
-}
-
-
-//--------------------------------------------------------------
-SlideButton * ButtonManager::addSlideButton(string title, float fbottom, float ftop, float& pValue ){
-	SlideButton * b = new SlideButton(title, 0, 0,fbottom, ftop, pValue );
-	addButton(b);
-	return b;
-}
-
-
-//--------------------------------------------------------------
-DisplayButton * ButtonManager::addDisplayButton(string title, float& pValue ){
-	DisplayButton * b = new DisplayButton(title, 0, 0, pValue );
-	addButton(b);
-	return b;
-}
-
-
-//--------------------------------------------------------------
-OnOffButton * ButtonManager::addOnOffButton(string title, bool& pValue ){
-	OnOffButton * b = new OnOffButton(title, 0, 0, pValue );
-	addButton(b);
-	return b;
-}
-
-
-//--------------------------------------------------------------
-FlashButton * ButtonManager::addFlashButton(string title, bool& pValue ){
-	
-	FlashButton * b = new FlashButton(title, 0, 0,pValue );
-	addButton(b);
-	return b;
-}
-
-
-//--------------------------------------------------------------
-ImageButton * ButtonManager::addImageButton(string imgfile, bool& pValue ){
-	
-	ImageButton * b = new ImageButton(0, 0, imgfile, pValue );
-	addButton(b);
-	return b;
-}
-
-#pragma mark -
-#pragma mark PANELS
+/********************* PANELS ********************/
 
 //--------------------------------------------------------------
 ButtonPanel * ButtonManager::addButtonPanel(string title){
@@ -359,6 +307,8 @@ void ButtonManager::addSelectionItem(string name, int& state, const int stateVal
 	}
 	lastPanel->addSelectionItem(name, state, stateValue);
 }
+
+
 
 
 

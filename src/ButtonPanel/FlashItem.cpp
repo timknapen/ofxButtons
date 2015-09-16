@@ -59,8 +59,11 @@ void FlashItem::draw(){
 		int steps = 20;
 		if(counter < steps ){
 			ofSetColor(255, 255*counter / steps, 255 * counter / steps);
+			
 			ofFill();
 			ofRect(5, 5, 20, 10);
+			
+			
 		}else {
 			ofSetHexColor(0xcccccc);
 			ofNoFill();
