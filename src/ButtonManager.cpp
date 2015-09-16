@@ -59,12 +59,10 @@ void ButtonManager::printValues(){
 //--------------------------------------------------------------
 void ButtonManager::draw(){
 	if(visible){
-		glDepthMask(false);
 		ofPushStyle();
 		ofDisableSmoothing();
 		ofDisableDepthTest();
         ofSetLineWidth(1);
-		glLineWidth(1);
 		drawToolBar();
 		ofEnableAlphaBlending();
 		for(int i = 0; i <buttons.size(); i++){
@@ -72,7 +70,6 @@ void ButtonManager::draw(){
 		}
 		ofDisableAlphaBlending();
 		ofPopStyle();
-		glDepthMask(true);
 	}
 }
 
@@ -108,13 +105,8 @@ void ButtonManager::drawToolBar(){
 				ofSetHexColor(0x999999);
 			}
 			
-			if(typeid(*buttonorder[i]) == typeid(DisplayButton) || typeid(*buttonorder[i]) == typeid(SlideButton)){
-				ofDrawBitmapString((string)(buttonorder[i]->title+" "+ofToString(*(buttonorder[i]->value), 0)).substr(0,maxchars), xpos+CHAR_W/2, 16);
-			}else {
-				ofDrawBitmapString((string)(buttonorder[i]->title).substr(0,maxchars),  xpos+CHAR_W/2, 16);
-				
-			}
 			
+				ofDrawBitmapString((string)(buttonorder[i]->title).substr(0,maxchars),  xpos+CHAR_W/2, 16);
 			
 			
 		}
@@ -191,16 +183,7 @@ void ButtonManager::loadXML(string URL){
     }
     
 	
-	// first get the sliders
 	int num = 0;
-	num = XML.getNumTags("SlideButton"); // case sensitive!
-	if(num > 0){
-		for(int i = 0; i < num; i++){
-			string name = XML.getAttribute("SlideButton", "name", "", i);
-			float val = XML.getAttribute("SlideButton", "value", 1, i);
-		}
-	}
-    
 	
 	// then ButtonPanels
 	num = XML.getNumTags("ButtonPanel"); // case sensitive!

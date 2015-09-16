@@ -11,12 +11,6 @@
 
 #include "ofMain.h"
 #include "SimpleButton.h"
-#include "SlideButton.h"
-#include "DisplayButton.h"
-#include "OnOffButton.h"
-
-#include "FlashButton.h"
-#include "ImageButton.h"
 
 // list
 #include "ListItem.h"

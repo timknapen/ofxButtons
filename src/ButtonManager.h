@@ -5,14 +5,7 @@
 #include "ofxButtons.h"
 #include "ofxXmlSettings.h"
 
-
-class DisplayButton;
-class OnOffButton;
-class FlashButton;
-class ImageButton;
-class SlideButton;
 class ButtonPanel;
-
 
 class ButtonManager{	
 public:
@@ -35,16 +28,6 @@ public:
 	void addFlashItem(string name, bool& value); // flash button
 	void addSelectionItem(string name, int& state, const int stateValue); // multi selection item
 
-	
-	//	
-	SlideButton * addSlideButton(string title, float fbottom, float ftop, float& pValue);
-	SlideButton * addSlideButton(string title, float& pValue);
-	//
-	DisplayButton * addDisplayButton(string title, float& pValue);
-	OnOffButton * addOnOffButton(string title, bool& pValue);
-	FlashButton * addFlashButton(string title, bool& pValue);
-	ImageButton * addImageButton(string imgfile, bool& pValue);
-	//
 
 	//
 	void addButton(SimpleButton * aButton);
