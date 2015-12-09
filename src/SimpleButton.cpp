@@ -52,7 +52,7 @@ void SimpleButton::draw(){
 		//ofSetColor(100, 100, 100,10); // << NO alpha!
 		ofSetColor(0, 0, 0,20); // << NO alpha!
 		
-		ofRect(4, 4, w, h*2);
+		ofDrawRectangle(4, 4, w, h*2);
 		//
 		ofSetHexColor(0x000000);
 		if(over){
@@ -60,7 +60,7 @@ void SimpleButton::draw(){
 		}else{
 			ofSetHexColor(0xfafafa);
 		}
-		ofRect(0, 0, w, h*2); // bg
+		ofDrawRectangle(0, 0, w, h*2); // bg
 		//
 		if(over){
 			ofSetHexColor(0x666666);
@@ -68,7 +68,7 @@ void SimpleButton::draw(){
 			ofSetHexColor(0x999999);
 		}
 		ofNoFill(); // bg border
-		ofRect(0, 0, w, h*2);
+		ofDrawRectangle(0, 0, w, h*2);
 		ofDrawBitmapString(title, 2, h/2 +6);
 		ofPopMatrix();	
 	}

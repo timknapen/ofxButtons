@@ -139,7 +139,7 @@ void ButtonPanel::draw(){
 		// SHADOW
 		// ofFill();
 		// ofSetColor(0, 0, 0,20);
-		// ofRect(5, 5, w, buttonheight);
+		// ofDrawRectangle(5, 5, w, buttonheight);
         
         // BACKGROUND
         ofFill();
@@ -148,7 +148,7 @@ void ButtonPanel::draw(){
 		if(over){
 			ofSetColor(255, 255, 255, 250);
 		}
-		ofRect(0, 0, w, buttonheight);
+		ofDrawRectangle(0, 0, w, buttonheight);
         
 		// BORDER
         if(over){
@@ -157,7 +157,7 @@ void ButtonPanel::draw(){
 			ofSetHexColor(0x999999);
 		}
 		ofNoFill(); // bg border
-        ofRect(0, 0, w, buttonheight);
+        ofDrawRectangle(0, 0, w, buttonheight);
 		
         // TITLE
         ofDrawBitmapString(title, 2, h/2 +6);

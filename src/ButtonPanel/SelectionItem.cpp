@@ -64,12 +64,12 @@ void SelectionItem::draw(){
 		}else{
 			ofSetHexColor(0x999999);
 		}
-		ofEllipse(12, 9, 11, 11);
+		ofDrawEllipse(12, 9, 11, 11);
 
 	}else {
 		ofSetHexColor(0xcccccc);
 		ofNoFill();
-		ofEllipse(12, 9, 9, 9);
+		ofDrawEllipse(12, 9, 9, 9);
 
 	}
 

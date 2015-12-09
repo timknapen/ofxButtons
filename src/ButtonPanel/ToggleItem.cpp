@@ -60,11 +60,11 @@ void ToggleItem::draw(){
 		}else{
             ofSetHexColor(BUTTONS_COLOR_MEDIUM);
 		}
-        ofRect(0, 2,(w - 5), h-2);
+        ofDrawRectangle(0, 2,(w - 5), h-2);
 	}else {
         //ofNoFill();
 		ofSetHexColor(BUTTONS_COLOR_LIGHT);
-        ofRect(0, 2,(w - 5), h-2);
+        ofDrawRectangle(0, 2,(w - 5), h-2);
 	}
 
     if(over){

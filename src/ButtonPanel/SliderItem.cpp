@@ -77,18 +77,19 @@ void SliderItem::printValue(){
 
 //--------------------------------------------------------------
 void SliderItem::draw(){
+	float limVal = MAX(bottom , MIN( top, *value)); // limited val
 	
 	ofPushMatrix();
 	ofTranslate(0, ypos,0);
 	ofFill();
 	ofSetHexColor(BUTTONS_COLOR_LIGHT);
-	ofRect(0, 2,(w -5), h-2);
+	ofDrawRectangle(0, 2,(w -5), h-2);
 	if(over){
 		ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
-		ofRect(0, 2, (int)((w -5)*(*value-bottom)/(top-bottom)), h-2);
+		ofDrawRectangle(0, 2, (int)((w -5)*(limVal-bottom)/(top-bottom)), h-2);
 	}else {
 		ofSetHexColor(BUTTONS_COLOR_MEDIUM);
-		ofRect(0, 2,(int)((w -5)*(*value-bottom)/(top-bottom)), h-2);
+		ofDrawRectangle(0, 2,(int)((w -5)*(limVal-bottom)/(top-bottom)), h-2);
 	}
 	if(over){
 		ofSetHexColor(0x333333);

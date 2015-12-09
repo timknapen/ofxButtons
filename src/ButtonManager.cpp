@@ -84,10 +84,10 @@ void ButtonManager::drawToolBar(){
 		int maxchars = (int)(toolbarw/ CHAR_W)-1;
 		ofFill();
 		ofSetColor(255, 255, 255, 240);
-		ofRect(0, 0, ofGetWidth(), toolbarh); // bg
+		ofDrawRectangle(0, 0, ofGetWidth(), toolbarh); // bg
 		//
 		ofSetHexColor(0xcccccc);// bg border
-		ofLine(0, toolbarh, ofGetWidth(), toolbarh);
+		ofDrawLine(0, toolbarh, ofGetWidth(), toolbarh);
 		
 		// titels
 		for(int i = 0 ; i < buttonorder.size(); i++) {
@@ -99,7 +99,7 @@ void ButtonManager::drawToolBar(){
 			ofFill();
 			if (buttonorder[i]->visible) {
 				ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
-				ofRect(xpos+2, 2, toolbarw-4, 16 );
+				ofDrawRectangle(xpos+2, 2, toolbarw-4, 16 );
 				ofSetHexColor(0x666666);
 			}else{
 				ofSetHexColor(0x999999);

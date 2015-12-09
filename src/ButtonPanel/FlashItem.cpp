@@ -54,20 +54,20 @@ void FlashItem::draw(){
 	{
 		ofSetHexColor(0xeeeeee);
 		if(over){
-			ofRect(5, 5, 20, 10);
+			ofDrawRectangle(5, 5, 20, 10);
 		}
 		int steps = 20;
 		if(counter < steps ){
 			ofSetColor(255, 255*counter / steps, 255 * counter / steps);
 			
 			ofFill();
-			ofRect(5, 5, 20, 10);
+			ofDrawRectangle(5, 5, 20, 10);
 			
 			
 		}else {
 			ofSetHexColor(0xcccccc);
 			ofNoFill();
-			ofRect(5, 5, 20, 10);
+			ofDrawRectangle(5, 5, 20, 10);
 			
 			
 		}
