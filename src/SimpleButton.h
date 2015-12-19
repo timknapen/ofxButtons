@@ -1,14 +1,16 @@
 #ifndef _SIMPLE_BUTTON
 #define _SIMPLE_BUTTON
 
+#include "ofMain.h"
 // Fix OF version differences
-#if OF_VERSION_MAJOR <= 0 && OF_VERSION_MINOR <= 8
+#if (OF_VERSION_MAJOR < 1) && (OF_VERSION_MINOR < 9)
+#warning Compiling with OLD OF VERSION, need to replace ofDrawRectangle, ofDrawEllipse and ofDrawLine
 #define		ofDrawRectangle(a,b,c,d)	ofRect(a,b,c,d)
 #define		ofDrawEllipse(a,b,c,d)		ofEllipse(a,b,c,d)
 #define		ofDrawLine(a,b,c,d)			ofLine(a,b,c,d)
 #endif
 
-#include "ofMain.h"
+
 #include "ofxXmlSettings.h"
 #define CHAR_W		8	
 
