@@ -1,6 +1,12 @@
 #ifndef _SIMPLE_BUTTON
 #define _SIMPLE_BUTTON
 
+#if OF_VERSION_MAJOR <= 0 && OF_VERSION_MINOR <= 8
+#define		ofDrawRectangle(a,b,c,d)	ofRectangle(a,b,c,d)
+#define		ofDrawEllipse(a,b,c,d)		ofEllipse(a,b,c,d)
+#define		ofDrawLine(a,b,c,d)			ofLine(a,b,c,d)
+#endif
+
 #include "ofMain.h"
 #include "ofxXmlSettings.h"
 #define CHAR_W		8	
