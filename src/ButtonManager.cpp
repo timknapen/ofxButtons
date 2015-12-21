@@ -150,7 +150,7 @@ void ButtonManager::hide(){
 
 //--------------------------------------------------------------
 void ButtonManager::saveToXML(string URL){
-	cout << "== Saving Button Setting to xml file!==";
+	cout << "== Saving Button Setting to xml file!==" << endl;
 	XML.clear();	// clear cause we are building a new xml file
 	XML.addTag("document");
 	XML.pushTag("document");
