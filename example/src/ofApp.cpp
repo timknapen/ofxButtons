@@ -18,7 +18,7 @@ void ofApp::setup(){
     panel->addSliderItem("fps", 0, 300, fps);
     panel->addFlashItem("Reset", bReset);
 
-    buttons.addSlideButton("FPS", 0, 300, fps);
+    buttons.addSliderItem("FPS", 0, 300, fps);
 }
 
 //--------------------------------------------------------------
