@@ -78,8 +78,8 @@ void ButtonManager::draw(){
 void ButtonManager::drawToolBar(){
 	
 	if(visible){
-		int ypos = 0;
-		int xpos = 0;
+		//int ypos = 0;
+        int xpos = 0;
 		int margin = 5;
 		int maxchars = (int)(toolbarw/ CHAR_W)-1;
 		ofFill();
@@ -91,7 +91,7 @@ void ButtonManager::drawToolBar(){
 		
 		// titels
 		for(int i = 0 ; i < buttonorder.size(); i++) {
-			ypos = toolbarlineheight * (i+1);
+			// ypos = toolbarlineheight * (i+1);
 			xpos = 10 + i * toolbarw;
 			ofNoFill();
 			ofSetHexColor(0x999999);
@@ -104,11 +104,9 @@ void ButtonManager::drawToolBar(){
 			}else{
 				ofSetHexColor(0x999999);
 			}
-			
-			
+            
 				ofDrawBitmapString((string)(buttonorder[i]->title).substr(0,maxchars),  xpos+CHAR_W/2, 16);
-			
-			
+
 		}
 	}
 }
