@@ -413,7 +413,8 @@ void ButtonManager::readsKeys(bool _listen_to_keys){
 
 //--------------------------------------------------------------
 bool ButtonManager::isDragging(){
-	return bIsDragging;
+	// return bIsDragging;
+	return visible && selButton != NULL;
 }
 
 //--------------------------------------------------------------
