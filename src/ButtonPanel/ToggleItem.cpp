@@ -62,7 +62,7 @@ void ToggleItem::draw(){
 		}
         ofDrawRectangle(0, 2,(w - 5), h-2);
 	}else {
-        //ofNoFill();
+        ofNoFill();
 		ofSetHexColor(BUTTONS_COLOR_LIGHT);
         ofDrawRectangle(0, 2,(w - 5), h-2);
 	}
