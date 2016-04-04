@@ -12,7 +12,7 @@
 //--------------------------------------------------------------
 FlashItem::FlashItem(string theTitle, bool& theValue):ListItem(theTitle){
 	// do nothing?
-	w = 34 + 4+ title.length()*CHAR_W; //textw
+	width = 34 + 4 + title.length()*CHAR_W; //textw
 	on = &theValue;
 	steps = 10;
 	counter = 20;
@@ -34,7 +34,7 @@ void FlashItem::saveToXML( ofxXmlSettings& XML){
 bool FlashItem::checkClick(int x, int y){
 	rely = y - ypos;
 	selected = false;
-	if(x > 0 && x < w && rely > 0 && rely < h){
+	if(x > 0 && x < width && rely > 0 && rely < height){
 		*on = true;
 		counter = 0;
 		selected = true;

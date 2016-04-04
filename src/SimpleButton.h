@@ -42,8 +42,8 @@ public:
 	string title;
 	int xpos;
 	int ypos;
-	int w;
-	int h;
+	int width;
+	int height;
 	int buttonheight;
 	int relx; //where I received the click (for draging)
 	int rely;

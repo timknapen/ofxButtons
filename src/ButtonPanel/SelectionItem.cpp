@@ -12,7 +12,7 @@
 //--------------------------------------------------------------
 SelectionItem::SelectionItem(string theTitle, int& _state, const int _stateValue):ListItem(theTitle){
 	// do nothing?
-	w = 34 + 4+ title.length()*CHAR_W; //textw
+	width = 34 + 4 + title.length()*CHAR_W; //textw
 	state = &_state;
 	stateValue = _stateValue;
 } 
@@ -41,7 +41,7 @@ void SelectionItem::printValue(){
 bool SelectionItem::checkClick(int x, int y){
 	rely = y - ypos;
 	selected = false;
-	if(x > 0 && x < w && rely > 0 && rely < h){
+	if(x > 0 && x < width && rely > 0 && rely < height){
 		selected = true;
 		*state = stateValue;
 	}

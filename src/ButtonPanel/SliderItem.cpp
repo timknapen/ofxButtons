@@ -15,8 +15,8 @@ SliderItem::SliderItem(string theTitle, float theMin, float theMax, float& theVa
 	// cout << "making new sliderItem: "<< theTitle << endl;
 	top = theMax;
 	bottom = theMin;
-	w = 30 + 4+ title.length()*CHAR_W; //textw
-	w = (w <200)?200:w;
+	width = 30 + 4 + title.length()*CHAR_W; //textw
+	width = (width < 300) ? 300 : width;
 	value = &theValue;
     *value = MIN(theMax, MAX(theMin, *value));
 } 
@@ -44,11 +44,11 @@ void SliderItem::setValue(float val){
 bool SliderItem::checkClick(int x, int y){
 	rely = y - ypos;
 	selected = false;
-	if(x > 0 && x < (w -5) && rely > 0 && rely < h){
+	if(x > 0 && x < (width -5) && rely > 0 && rely < height){
 		selected = true;
 	}
 	if (selected) {
-		float t = (float)x/(float)(w -5);
+		float t = (float)x/(float)(width -5);
 		t = (t >1) ? 1: t;
 		t = (t <0) ? 0: t;
 		*value = bottom + (top-bottom)*t;
@@ -62,7 +62,7 @@ bool SliderItem::checkClick(int x, int y){
 //--------------------------------------------------------------
 void SliderItem::drag(int x, int y){
 	rely = y -ypos;
-	float t = (float)x/(float)(w -5);
+	float t = (float)x/(float)(width -5);
 	t = (t >1) ? 1: t;
 	t = (t <0) ? 0: t;
 	*value = bottom + (top-bottom)*t;
@@ -83,20 +83,20 @@ void SliderItem::draw(){
 	ofTranslate(0, ypos,0);
 	ofFill();
 	ofSetHexColor(BUTTONS_COLOR_LIGHT);
-	ofDrawRectangle(0, 2,(w -5), h-2);
+	ofDrawRectangle(0, 2,(width -5), height-2);
 	if(over){
 		ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
-		ofDrawRectangle(0, 2, (int)((w -5)*(limVal-bottom)/(top-bottom)), h-2);
+		ofDrawRectangle(0, 2, (int)((width -5)*(limVal-bottom)/(top-bottom)), height-2);
 	}else {
 		ofSetHexColor(BUTTONS_COLOR_MEDIUM);
-		ofDrawRectangle(0, 2,(int)((w -5)*(limVal-bottom)/(top-bottom)), h-2);
+		ofDrawRectangle(0, 2,(int)((width -5)*(limVal-bottom)/(top-bottom)), height-2);
 	}
 	if(over){
 		ofSetHexColor(0x333333);
 	}else{
 		ofSetHexColor(0x666666);
 	}
-	ofDrawBitmapString(title+" "+ofToString(*value, 2), 2, h-2);
+	ofDrawBitmapString(title+" "+ofToString(*value, 2), 2, height-2);
 	ofPopMatrix();
 	
 	//

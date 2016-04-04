@@ -8,10 +8,10 @@ SimpleButton::SimpleButton(string name, int x, int y){
 	title = name;
 	xpos = x;
 	ypos = y;
-	w = 4+ title.length() *CHAR_W; //textw
-	w = (w<100) ? 100 : w;
-	h = 18;
-	buttonheight= 2*h;
+	width = 4+ title.length() *CHAR_W; //textw
+	width = (width<100) ? 100 : width;
+	height = 18;
+	buttonheight= 2*height;
 	relx = 0;
 	rely = 0;
 	selected = false;
@@ -52,7 +52,7 @@ void SimpleButton::draw(){
 		//ofSetColor(100, 100, 100,10); // << NO alpha!
 		ofSetColor(0, 0, 0,20); // << NO alpha!
 		
-		ofDrawRectangle(4, 4, w, h*2);
+		ofDrawRectangle(4, 4, width, height*2);
 		//
 		ofSetHexColor(0x000000);
 		if(over){
@@ -60,7 +60,7 @@ void SimpleButton::draw(){
 		}else{
 			ofSetHexColor(0xfafafa);
 		}
-		ofDrawRectangle(0, 0, w, h*2); // bg
+		ofDrawRectangle(0, 0, width, height*2); // bg
 		//
 		if(over){
 			ofSetHexColor(0x666666);
@@ -68,8 +68,8 @@ void SimpleButton::draw(){
 			ofSetHexColor(0x999999);
 		}
 		ofNoFill(); // bg border
-		ofDrawRectangle(0, 0, w, h*2);
-		ofDrawBitmapString(title, 2, h/2 +6);
+		ofDrawRectangle(0, 0, width, height*2);
+		ofDrawBitmapString(title, 2, height/2 +6);
 		ofPopMatrix();	
 	}
 	
@@ -111,7 +111,7 @@ void SimpleButton::update(){
 bool SimpleButton::checkClick(int x, int y){
 	relx = x-xpos;
 	rely = y-ypos;
-	selected =(relx > 0 && relx < w && rely > 0 && rely < 2*h);
+	selected =(relx > 0 && relx < width && rely > 0 && rely < 2*height);
 	return selected;
 }
 
@@ -120,7 +120,7 @@ bool SimpleButton::checkClick(int x, int y){
 bool SimpleButton::checkOver(int x, int y){
 	relx = x-xpos;
 	rely = y-ypos;
-	over =(relx > 0 && relx < w && rely > 0 && rely < 2*h);
+	over =(relx > 0 && relx < width && rely > 0 && rely < 2*height);
 	return over;
 }
 

@@ -101,7 +101,7 @@ bool ButtonPanel::checkClick(int x, int y){
 		relx = x-xpos;
 		rely = y-ypos;
 		selected = false;
-		if(relx > 0 && relx < w && rely > 0 && rely < buttonheight){
+		if(relx > 0 && relx < width && rely > 0 && rely < buttonheight){
 			selected = true;
 		}
 		
@@ -148,7 +148,7 @@ void ButtonPanel::draw(){
 		if(over){
 			ofSetColor(255, 255, 255, 250);
 		}
-		ofDrawRectangle(0, 0, w, buttonheight);
+		ofDrawRectangle(0, 0, width, buttonheight);
         
 		// BORDER
         if(over){
@@ -157,10 +157,10 @@ void ButtonPanel::draw(){
 			ofSetHexColor(0x999999);
 		}
 		ofNoFill(); // bg border
-        ofDrawRectangle(0, 0, w, buttonheight);
+        ofDrawRectangle(0, 0, width, buttonheight);
 		
         // TITLE
-        ofDrawBitmapString(title, 2, h/2 +6);
+        ofDrawBitmapString(title, 2, height/2 +6);
 		
 		//
 		ofFill();
@@ -206,9 +206,9 @@ void ButtonPanel::clearItems(){
 void ButtonPanel::addListItem( ListItem * item){
 	item->ypos = itemheight + items.size()*itemheight;
 	items.push_back(item);
-	buttonheight = h/2 + itemheight * (items.size()+1);
-	int tempw = item->w;
-	w = (tempw > w) ? tempw : w;
+	buttonheight = height/2 + itemheight * (items.size()+1);
+	int tempw = item->width;
+	width = (tempw > width) ? tempw : width;
 	// cout << "adding a list item" << endl;
 }
 
@@ -270,7 +270,7 @@ bool ButtonPanel::checkOver(int x, int y){
 		
 		relx = x-xpos;
 		rely = y-ypos;
-		over =(relx > 0 && relx < w && rely > 0 && rely < buttonheight);
+		over =(relx > 0 && relx < width && rely > 0 && rely < buttonheight);
 		if(over){
 			for (int i =0 ; i <items.size(); i++) {
 				items[i]->checkOver(relx, rely);

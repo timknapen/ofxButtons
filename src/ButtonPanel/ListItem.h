@@ -33,8 +33,8 @@ public:
 	bool hasName(string s);
 	string title;
 	int ypos, rely;
-	int w;
-	int h;
+	int width;
+	int height;
 	int buttonheight;
 	bool selected; // has been clicked
 	bool over; // has been rolled over
