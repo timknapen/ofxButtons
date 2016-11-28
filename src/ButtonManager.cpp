@@ -282,7 +282,7 @@ void ButtonManager::addFlashItem(string name, bool& value){
 }
 
 //--------------------------------------------------------------
-void ButtonManager::addSelectionItem(string name, int& state, const int stateValue){
+void ButtonManager::addSelectionItem(string name, const int stateValue, int& state){
 	if(lastPanel == NULL){
 		addButtonPanel("Settings");
 	}
