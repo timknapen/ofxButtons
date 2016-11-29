@@ -130,6 +130,11 @@ void ButtonManager::toggleVisible(){
 	visible = !visible;
 }
 
+//--------------------------------------------------------------
+bool ButtonManager::isVisible(){
+	return visible;
+}
+
 
 
 //--------------------------------------------------------------

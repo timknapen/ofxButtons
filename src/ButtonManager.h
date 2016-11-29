@@ -64,6 +64,7 @@ public:
 	void drawToolBar(); // draw a toolbar on top!
 	void update(); // update the buttons (als ze een counter hebben ofzo?)
 	//
+	bool isVisible();
 	void toggleVisible();
 	void show();
 	void hide();
