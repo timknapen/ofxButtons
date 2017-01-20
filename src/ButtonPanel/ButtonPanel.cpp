@@ -242,7 +242,7 @@ void ButtonPanel::addFlashItem(string title,bool& value){
 
 
 //--------------------------------------------------------------
-void ButtonPanel::addSelectionItem(string name, int& state, const int stateValue){
+void ButtonPanel::addSelectionItem(string name,  const int stateValue, int& state){
 	ListItem * l = new SelectionItem(name, state, stateValue);
 	addListItem(l);
 }

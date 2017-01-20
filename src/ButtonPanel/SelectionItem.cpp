@@ -51,7 +51,7 @@ bool SelectionItem::checkClick(int x, int y){
 //--------------------------------------------------------------
 void SelectionItem::draw(){
 	ofPushMatrix();
-	ofTranslate(32, 0, 0);
+	ofTranslate(22, 0, 0);
 	ListItem::draw();
 	ofPopMatrix();
 	
@@ -64,13 +64,12 @@ void SelectionItem::draw(){
 		}else{
 			ofSetHexColor(0x999999);
 		}
-		ofDrawEllipse(12, 9, 11, 11);
+		ofDrawEllipse(12, 12, 11, 11);
 
 	}else {
 		ofSetHexColor(0xcccccc);
 		ofNoFill();
-		ofDrawEllipse(12, 9, 9, 9);
-
+		ofDrawEllipse(12, 12, 9, 9);
 	}
 
 	ofPopMatrix();

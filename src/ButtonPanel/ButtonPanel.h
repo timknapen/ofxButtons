@@ -39,7 +39,7 @@ public:
 	void addToggleItem(string title, bool& value); //onoff
 	SliderItem * addSliderItem(string title, float bottom, float top, float& value); // slider
 	void addFlashItem(string name, bool& value); // flash button
-	void addSelectionItem(string name, int& state, const int stateValue); // multi selection item
+	void addSelectionItem(string name, const int stateValue, int& state); // multi selection item
 
 	bool checkClick(int x, int y);
 	bool checkOver(int x, int y);

@@ -291,7 +291,7 @@ void ButtonManager::addSelectionItem(string name, const int stateValue, int& sta
 	if(lastPanel == NULL){
 		addButtonPanel("Settings");
 	}
-	lastPanel->addSelectionItem(name, state, stateValue);
+	lastPanel->addSelectionItem(name, stateValue, state);
 }
 
 
