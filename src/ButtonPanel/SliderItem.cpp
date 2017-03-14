@@ -85,10 +85,10 @@ void SliderItem::draw(){
 	ofSetHexColor(BUTTONS_COLOR_LIGHT);
 	ofDrawRectangle(0, 2,(width -5), height-2);
 	if(over){
-		ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
+		ofSetHexColor(BUTTONS_COLOR_GREEN_HIGHLIGHT);
 		ofDrawRectangle(0, 2, (int)((width -5)*(limVal-bottom)/(top-bottom)), height-2);
 	}else {
-		ofSetHexColor(BUTTONS_COLOR_MEDIUM);
+		ofSetHexColor(BUTTONS_COLOR_GREEN);
 		ofDrawRectangle(0, 2,(int)((width -5)*(limVal-bottom)/(top-bottom)), height-2);
 	}
 	if(over){

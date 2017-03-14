@@ -52,28 +52,39 @@ bool ToggleItem::checkClick(int x, int y){
 void ToggleItem::draw(){
 	ofPushMatrix();
 	ofTranslate(0, ypos,0);
-    ofFill();
-
-	if(*on) {
+	
+	int toggleh = height-4;
+	ofPushMatrix();
+	ofTranslate(5,2);
+	// frame last
+	ofFill();
+	ofSetHexColor(BUTTONS_COLOR_LIGHT);
+	ofDrawRectangle(0, 0, 2*toggleh, toggleh);
+	
+	ofFill();
+	if(*on){ // ON!
 		if(over){
-			ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
+			ofSetHexColor(BUTTONS_COLOR_GREEN_HIGHLIGHT);
 		}else{
-            ofSetHexColor(BUTTONS_COLOR_MEDIUM);
+			ofSetHexColor(BUTTONS_COLOR_GREEN);
 		}
-        ofDrawRectangle(0, 2,(width - 5), height-2);
-	}else {
-        ofNoFill();
-		ofSetHexColor(BUTTONS_COLOR_LIGHT);
-        ofDrawRectangle(0, 2,(width - 5), height-2);
+		ofDrawRectangle(0, 0, toggleh, toggleh);
+	}else { // OFF
+		if(over){
+			ofSetHexColor(BUTTONS_COLOR_ACTIVE_RED);
+		}else{
+			ofSetHexColor(BUTTONS_COLOR_MEDIUM);
+		}
+		ofDrawRectangle(toggleh, 0, toggleh, toggleh);
 	}
+	ofPopMatrix();
 
     if(over){
-        ofSetHexColor(0x333333);
+        ofSetHexColor(BUTTONS_COLOR_TEXT_DARK);
     }else{
-        ofSetHexColor(0x666666);
+        ofSetHexColor(BUTTONS_COLOR_TEXT_LIGHT);
     }
-    ofDrawBitmapString(title , (width-5)/2 - (title.length()*CHAR_W)/2, height-4); // title + " " + (*on ? "ON" : "OFF" )
-
+    ofDrawBitmapString(title , 50, height-4);
 	ofPopMatrix();
 	
 	//

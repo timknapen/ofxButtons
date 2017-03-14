@@ -61,6 +61,7 @@ void ButtonManager::draw(){
 	if(visible){
 		ofPushStyle();
 		ofDisableSmoothing();
+		ofDisableAntiAliasing();
 		ofDisableDepthTest();
         ofSetLineWidth(1);
 		drawToolBar();
@@ -98,7 +99,7 @@ void ButtonManager::drawToolBar(){
             
 			ofFill();
 			if (buttonorder[i]->visible) {
-				ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
+				ofSetHexColor(BUTTONS_COLOR_GREEN_HIGHLIGHT);
 				ofDrawRectangle(xpos+2, 2, toolbarw-4, 16 );
 				ofSetHexColor(0x666666);
 			}else{

@@ -56,11 +56,11 @@ void SelectionItem::draw(){
 	ofPopMatrix();
 	
 	ofPushMatrix();
-	ofTranslate(0, ypos,0);
+	ofTranslate(0, ypos, 0);
 	ofFill();
 	if (*state == stateValue) {
 		if(over){
-			ofSetHexColor(BUTTONS_COLOR_HIGHLIGHT);
+			ofSetHexColor(BUTTONS_COLOR_GREEN_HIGHLIGHT);
 		}else{
 			ofSetHexColor(0x999999);
 		}
