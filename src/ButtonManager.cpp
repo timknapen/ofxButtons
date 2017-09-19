@@ -60,9 +60,12 @@ void ButtonManager::printValues(){
 void ButtonManager::draw(){
 	if(visible){
 		ofPushStyle();
+		/*
 		ofDisableSmoothing();
 		ofDisableAntiAliasing();
+		*/
 		ofDisableDepthTest();
+		
         ofSetLineWidth(1);
 		drawToolBar();
 		ofEnableAlphaBlending();
@@ -151,6 +154,11 @@ void ButtonManager::hide(){
 
 
 #pragma mark - SAVING / LOADING
+//--------------------------------------------------------------
+void ButtonManager::saveSettings(){
+	saveToXML("buttonSettings.xml");
+	
+}
 
 //--------------------------------------------------------------
 void ButtonManager::saveToXML(string URL){
@@ -168,6 +176,11 @@ void ButtonManager::saveToXML(string URL){
 	}
 	XML.popTag();
 	XML.saveFile(URL);
+}
+
+//--------------------------------------------------------------
+void ButtonManager::loadSettings(){
+	loadXML("buttonSettings.xml");
 }
 
 //--------------------------------------------------------------

@@ -15,7 +15,9 @@ public:
 	
 	void printValues();
 	void setup();
+	void loadSettings();
 	void loadXML(string URL);
+	void saveSettings();
 	void saveToXML(string URL);
 	void setButtonPanel(string name);
 	
