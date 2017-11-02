@@ -80,9 +80,7 @@ void ListItem::update(){
 
 //----------------------------------------------------------------
 bool ListItem::checkClick(int x, int y){
-	rely = y - ypos;
-	selected =(x > 0 && x < width && rely > 0 && rely < height);
-	return selected;
+	return false;
 }
 
 
