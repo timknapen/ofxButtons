@@ -293,6 +293,14 @@ void ButtonManager::addSliderItem(string title, float bottom, float top, float& 
 }
 
 //--------------------------------------------------------------
+void ButtonManager::addColorItem(string title, ofPoint& color){
+	if(lastPanel == NULL){
+		addButtonPanel("Settings");
+	}
+	lastPanel->addColorItem(title, color);
+}
+
+//--------------------------------------------------------------
 void ButtonManager::addFlashItem(string name, bool& value){
 	if(lastPanel == NULL){
 		addButtonPanel("Settings");

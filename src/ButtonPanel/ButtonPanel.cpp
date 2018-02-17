@@ -55,6 +55,18 @@ void ButtonPanel::setFromXML(ofxXmlSettings &XML){
 		setByName( name,  val);
 		// cout <<"\t"<< i<<"\t\tSelectionItem\t\tname: '"<< name <<"',\t\t value: "<<val<<endl;
 	}
+	
+	num = XML.getNumTags("ColorPickerItem");
+	// cout << "\t- ColorPickerItems (" << num <<")"<<endl;
+	for(int i = 0; i < num; i++){
+		string name = XML.getAttribute("ColorPickerItem", "name", "", i);
+		float r = XML.getAttribute("ColorPickerItem", "r", 1.0f, i);
+		float g = XML.getAttribute("ColorPickerItem", "g", 1.0f, i);
+		float b = XML.getAttribute("ColorPickerItem", "b", 1.0f, i);
+
+		setByName( name,  ofPoint(r, g, b));
+		// cout <<"\t"<< i<<"\t\tSelectionItem\t\tname: '"<< name <<"',\t\t value: "<<val<<endl;
+	}
 }
 
 
@@ -68,6 +80,22 @@ void ButtonPanel::setByName(string name, float val){
 	}
 	cout << "\t\t could not find item: "<<name<<endl;
     
+}
+
+//--------------------------------------------------------------
+void ButtonPanel::setByName(string name, ofPoint pt){
+	for (int i =0; i <items.size(); i++) {
+		if(items[i]->hasName(name)) {
+			ColorPickerItem * pItem = dynamic_cast < ColorPickerItem * > (items[i]);
+			if(pItem != NULL){
+				pItem->setValue(pt);
+
+			}
+			return;
+		}
+	}
+	cout << "\t\t could not find item: "<<name<<endl;
+	
 }
 
 
@@ -234,6 +262,14 @@ SliderItem * ButtonPanel::addSliderItem(string title, float bottom, float top, f
 	return l;
 }
 
+
+//--------------------------------------------------------------
+void ButtonPanel::addColorItem(string title, ofPoint& c){
+	ColorPickerItem * cpi = new ColorPickerItem(title, c);
+	addListItem(cpi);
+	return cpi;
+}
+
 //--------------------------------------------------------------
 void ButtonPanel::addFlashItem(string title,bool& value){
 	ListItem * l = new FlashItem(title,value);
@@ -253,7 +289,7 @@ void ButtonPanel::addSelectionItem(string name,  const int stateValue, int& stat
 void ButtonPanel::drag(int x, int y){
 	if (visible) {
 		if(sel >= 0){
-			items[sel] ->drag(x-xpos,ypos);
+			items[sel] ->drag(x-xpos,y-ypos);
 		}else {
 			
 			SimpleButton::drag(x,y);

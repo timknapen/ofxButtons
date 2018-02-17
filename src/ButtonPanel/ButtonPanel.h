@@ -26,6 +26,7 @@ class ToggleItem;
 class SliderItem;
 class FlashItem;
 class SelectionItem;
+class ColorPickerItem;
 
 class ButtonPanel : public SimpleButton {
 public:
@@ -39,6 +40,7 @@ public:
 	void addToggleItem(string title, bool& value); //onoff
 	SliderItem * addSliderItem(string title, float bottom, float top, float& value); // slider
 	void addFlashItem(string name, bool& value); // flash button
+	void addColorItem(string name, ofPoint& color); // color picker button
 	void addSelectionItem(string name, const int stateValue, int& state); // multi selection item
 
 	bool checkClick(int x, int y);
@@ -46,6 +48,7 @@ public:
 	void saveToXML( ofxXmlSettings& XML);
 	void setFromXML( ofxXmlSettings& XML);
 	void setByName(string name, float value);
+	void setByName(string name, ofPoint pt);
 	void clearItems();
 
 	//

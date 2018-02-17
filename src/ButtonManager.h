@@ -28,6 +28,7 @@ public:
 	void addToggleItem(string title, bool& value); //onoff
 	void addSliderItem(string title, float bottom, float top, float& value); // slider
 	void addFlashItem(string name, bool& value); // flash button
+	void addColorItem(string name, ofPoint& color);
 	void addSelectionItem(string name, const int stateValue, int& state); // multi selection item
 
 

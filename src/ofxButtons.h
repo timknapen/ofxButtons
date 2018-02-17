@@ -26,6 +26,7 @@
 #include "SliderItem.h"
 #include "FlashItem.h"
 #include "SelectionItem.h"
+#include "ColorPickerItem.h"
 //
 #include "ButtonPanel.h"
 
