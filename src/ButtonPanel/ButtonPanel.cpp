@@ -126,7 +126,7 @@ bool ButtonPanel::checkClick(int x, int y){
 	selected = false;
 	if(visible){
 		
-		relx = x-xpos;
+		relx = x-xpos-2; // Items are indented 2px in draw!
 		rely = y-ypos;
 		selected = false;
 		if(relx > 0 && relx < width && rely > 0 && rely < buttonheight){
@@ -289,7 +289,7 @@ void ButtonPanel::addSelectionItem(string name,  const int stateValue, int& stat
 void ButtonPanel::drag(int x, int y){
 	if (visible) {
 		if(sel >= 0){
-			items[sel] ->drag(x-xpos,y-ypos);
+			items[sel] ->drag(x-xpos-2,y-ypos);
 		}else {
 			
 			SimpleButton::drag(x,y);

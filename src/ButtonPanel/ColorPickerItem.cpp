@@ -35,6 +35,8 @@ ColorPickerItem::ColorPickerItem(string theTitle, ofPoint& _color):ListItem(theT
 								 (ypct < 0.5) ? 255 * 2 * ypct : 255 * 2 * (1 - (ypct - 0.5)),		 // S
 								 (ypct < 0.5) ? 255 : 255 *  ( 1 - 2 *(ypct - 0.5))	// B
 								);
+			}else if(x == imgw - 10){
+				newColor.set(255, 255, 255);
 			}else{
 				float l = ceil(255.0 * (1.0 - ypct) );
 				newColor.set(l, l, l );
@@ -73,7 +75,6 @@ void ColorPickerItem::setValue(float _val){
 
 //--------------------------------------------------------------
 bool ColorPickerItem::checkClick(int x, int y){
-	rely = y - ypos;
 	ofPoint imgPos( x - 10, y - ypos ); // the image is drawn at 10, 0
 	int imgw = img.getWidth();
 	int imgh = img.getHeight();
@@ -94,8 +95,7 @@ bool ColorPickerItem::checkClick(int x, int y){
 
 //--------------------------------------------------------------
 void ColorPickerItem::drag(int x, int y){
-	rely = y -ypos;
-	ofPoint imgPos( x - 10, y - ypos); // the image is drawn at 10, 2
+	ofPoint imgPos( x - 10, y - ypos); // the image is drawn at 10, 0
 	int imgw = img.getWidth();
 	int imgh = img.getHeight();
 	if(imgPos.x < 0){
@@ -132,10 +132,16 @@ void ColorPickerItem::draw(){
 
 	
 	ofPushMatrix();
-	ofTranslate(0, ypos,0);
+	ofTranslate(0, ypos);
+	ofSetLineWidth(1);
+	ofSetColor(0, 255, 0);
+	ofDrawLine(-2, 0, 2, 0);
+	ofDrawLine(0, -2, 0, 2);
+	// draw the sample color
 	ofFill();
 	ofSetColor(color->x, color->y, color->z);
 	ofDrawRectangle(0, 0, 8, height);
+	// draw the image at 10, ypos
 	ofSetColor(255);
 	img.draw(10, 0);
 	if(over){
