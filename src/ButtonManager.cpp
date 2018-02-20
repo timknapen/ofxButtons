@@ -293,11 +293,11 @@ void ButtonManager::addSliderItem(string title, float bottom, float top, float& 
 }
 
 //--------------------------------------------------------------
-void ButtonManager::addColorItem(string title, ofPoint& color){
+void ButtonManager::addColorItem(string title, ofPoint& color, float saturation){
 	if(lastPanel == NULL){
 		addButtonPanel("Settings");
 	}
-	lastPanel->addColorItem(title, color);
+	lastPanel->addColorItem(title, color, saturation);
 }
 
 //--------------------------------------------------------------

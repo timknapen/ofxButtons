@@ -11,7 +11,7 @@
 
 
 //--------------------------------------------------------------
-ColorPickerItem::ColorPickerItem(string theTitle, ofPoint& _color):ListItem(theTitle){
+ColorPickerItem::ColorPickerItem(string theTitle, ofPoint& _color, float saturation):ListItem(theTitle){
 	// cout << "making new sliderItem: "<< theTitle << endl;
 	width = 30 + 4 + title.length()*CHAR_W; //textw
 	width = (width < 300) ? 300 : width;
@@ -32,8 +32,8 @@ ColorPickerItem::ColorPickerItem(string theTitle, ofPoint& _color):ListItem(theT
 			
 			if( x < imgw - 10){
 				newColor.setHsb( 255 * xpct,		// H
-								 (ypct < 0.5) ? 255 * 2 * ypct : 255 * 2 * (1 - (ypct - 0.5)),		 // S
-								 (ypct < 0.5) ? 255 : 255 *  ( 1 - 2 *(ypct - 0.5))	// B
+								saturation * 255 * ((ypct < 0.5) ?  2 * ypct : 1 ), // 1 - 2 *(ypct - 0.5))),		 // S
+								255 * ((ypct < 0.5) ? 1 :  1 - 2 *(ypct - 0.5))	// B
 								);
 			}else if(x == imgw - 10){
 				newColor.set(255, 255, 255);
@@ -133,10 +133,6 @@ void ColorPickerItem::draw(){
 	
 	ofPushMatrix();
 	ofTranslate(0, ypos);
-	ofSetLineWidth(1);
-	ofSetColor(0, 255, 0);
-	ofDrawLine(-2, 0, 2, 0);
-	ofDrawLine(0, -2, 0, 2);
 	// draw the sample color
 	ofFill();
 	ofSetColor(color->x, color->y, color->z);

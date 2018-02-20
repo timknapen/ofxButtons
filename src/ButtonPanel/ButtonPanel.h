@@ -40,7 +40,7 @@ public:
 	void addToggleItem(string title, bool& value); //onoff
 	SliderItem * addSliderItem(string title, float bottom, float top, float& value); // slider
 	void addFlashItem(string name, bool& value); // flash button
-	void addColorItem(string name, ofPoint& color); // color picker button
+	void addColorItem(string name, ofPoint& color, float saturation = 1); // color picker button
 	void addSelectionItem(string name, const int stateValue, int& state); // multi selection item
 
 	bool checkClick(int x, int y);

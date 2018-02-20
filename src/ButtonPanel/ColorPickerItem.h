@@ -17,7 +17,7 @@ class ColorPickerItem : public ListItem{
 private:
 	
 public:
-	ColorPickerItem( string theTitle, ofPoint& color);
+	ColorPickerItem( string theTitle, ofPoint& color, float saturation = 1);
 	void draw();
 	void drag(int x, int y);
 	bool checkClick(int x, int y);

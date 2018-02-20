@@ -264,8 +264,8 @@ SliderItem * ButtonPanel::addSliderItem(string title, float bottom, float top, f
 
 
 //--------------------------------------------------------------
-void ButtonPanel::addColorItem(string title, ofPoint& c){
-	ColorPickerItem * cpi = new ColorPickerItem(title, c);
+void ButtonPanel::addColorItem(string title, ofPoint& c, float saturation){
+	ColorPickerItem * cpi = new ColorPickerItem(title, c, saturation);
 	addListItem(cpi);
 	return cpi;
 }
