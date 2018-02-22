@@ -79,7 +79,7 @@ bool ColorPickerItem::checkClick(int x, int y){
 	int imgw = img.getWidth();
 	int imgh = img.getHeight();
 	selected = false;
-	if(imgPos.x > 0 && imgPos.x < imgw && imgPos.y > 0 && imgPos.y < imgh){
+	if(imgPos.x >= 0 && imgPos.x < imgw && imgPos.y >= 0 && imgPos.y < imgh){
 		selected = true;
 	}
 	if (selected) {
@@ -111,7 +111,7 @@ void ColorPickerItem::drag(int x, int y){
 		imgPos.y = imgh-1;
 	}
 	
-	if(imgPos.x > 0 && imgPos.x < imgw && imgPos.y > 0 && imgPos.y < imgh){
+	if(imgPos.x >= 0 && imgPos.x < imgw && imgPos.y >= 0 && imgPos.y < imgh){
 		ofPixels pix = img.getPixels();
 		int id = (int)imgPos.x + (int)imgPos.y * imgw;
 		color->set(pix[3*id], pix[3*id+1], pix[3*id+2]);
