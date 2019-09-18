@@ -28,7 +28,7 @@ ColorPickerItem::ColorPickerItem(string theTitle, ofPoint& _color, float saturat
 			id = x + y * imgw;
 			ofColor newColor;
 			xpct = (float)x/(float)(imgw-10);
-			ypct = (float)y/(float)imgh;
+			ypct = (float)y/(float)(imgh-1);
 			
 			if( x < imgw - 10){
 				newColor.setHsb( 255 * xpct,		// H
