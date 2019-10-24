@@ -62,6 +62,7 @@ public:
 	//
 	void addEvents();
 	
+    bool hasFocus();        // am i being clicked? (alias for isDragging)
 	bool isDragging();		// am i dragging?
 	void draw(); // draw the buttons
 	void drawToolBar(); // draw a toolbar on top!

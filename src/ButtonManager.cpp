@@ -438,6 +438,12 @@ void ButtonManager::readsKeys(bool _listen_to_keys){
 
 #pragma mark - MOUSE EVENTS
 
+
+//--------------------------------------------------------------
+bool ButtonManager::hasFocus(){
+    return isDragging();
+}
+
 //--------------------------------------------------------------
 bool ButtonManager::isDragging(){
 	// return bIsDragging;
@@ -547,6 +553,7 @@ void ButtonManager::mouseReleased(){ // release the mousebutton
 	for(int i = mssg.size()-1; i >= 0; i--){
 		mssg.at(i)->unSelect();
 	}
+    selButton = NULL;
 }
 
 //--------------------------------------------------------------
