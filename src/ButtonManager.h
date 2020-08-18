@@ -48,7 +48,8 @@ public:
 	void mouseMoved(int x, int y); // roll-over checking!
 	void mouseReleased(int x, int y, int button); // release the mousebutton
 	void mouseReleased(); // release the mousebutton
-	
+    void keyPressed(int key);
+
 	// OF EVENTS
     void draw(ofEventArgs &e);
     void exit(ofEventArgs &e);

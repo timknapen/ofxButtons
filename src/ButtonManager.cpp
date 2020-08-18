@@ -424,6 +424,24 @@ void ButtonManager::keyPressed(ofKeyEventArgs &e){
 	}
 }
 
+
+//--------------------------------------------------------------
+void ButtonManager::keyPressed(int key){
+    if(bReadKeys){
+        switch (key) {
+            case 'f':
+                ofToggleFullscreen();
+                break;
+            case 'i':
+                toggleVisible();
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+
 //--------------------------------------------------------------
 void ButtonManager::keyReleased(ofKeyEventArgs &e){
 	//unused
