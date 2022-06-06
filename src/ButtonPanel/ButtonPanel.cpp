@@ -2,8 +2,8 @@
  *  ButtonPanel.cpp
  *  buttons
  *
- *  Created by timknapen on 30/01/10.
- *  Copyright 2010 Indianen. All rights reserved.
+ *  Created by Tim Knapen on 30/01/10.
+ *  Copyright 2010 Tim Knapen. All rights reserved.
  *
  */
 

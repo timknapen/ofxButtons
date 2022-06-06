@@ -2,8 +2,8 @@
  *  ColorPickerItem.cpp
  *  buttons
  *
- *  Created by timknapen on 30/02/18.
- *  Copyright 2010 Indianen. All rights reserved.
+ *  Created by Tim Knapen on 30/02/18.
+ *  Copyright 2010 Tim Knapen. All rights reserved.
  *
  */
 
@@ -75,7 +75,7 @@ void ColorPickerItem::setValue(float _val){
 
 //--------------------------------------------------------------
 bool ColorPickerItem::checkClick(int x, int y){
-	ofPoint imgPos( x - 10, y - ypos ); // the image is drawn at 10, 0
+  ofPoint imgPos( x - 10, y - ypos ); // the image is drawn at 10, 0
 	int imgw = img.getWidth();
 	int imgh = img.getHeight();
 	selected = false;
@@ -95,7 +95,7 @@ bool ColorPickerItem::checkClick(int x, int y){
 
 //--------------------------------------------------------------
 void ColorPickerItem::drag(int x, int y){
-	ofPoint imgPos( x - 10, y - ypos); // the image is drawn at 10, 0
+  ofPoint imgPos( x - 10, y - ypos); // the image is drawn at 10, 0
 	int imgw = img.getWidth();
 	int imgh = img.getHeight();
 	if(imgPos.x < 0){

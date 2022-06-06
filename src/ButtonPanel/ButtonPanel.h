@@ -10,7 +10,7 @@
  Every item in the window is a subclass of ListItem
  
  *  Created by timknapen on 30/01/10.
- *  Copyright 2010 Indianen. All rights reserved.
+ *  Copyright 2010 Tim Knapen. All rights reserved.
  *
  */
 
